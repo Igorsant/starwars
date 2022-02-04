@@ -1,0 +1,36 @@
+.flex {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: yellow;
+    flex-direction: column;
+    height: 100vh;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: auto auto auto;
+}
+
+@media (max-width: 412px){
+    .links{
+        grid-template-columns: auto;
+    }
+}
+
+.links .btn{
+    text-decoration: none;
+    text-align: center;
+    color: yellow;
+    width: 150px;
+    margin: 10px;
+    background-color: rgb(75, 77, 73);
+    padding: 20px 10px;
+    border-radius: 10px;
+    transition: background-color 0.5s;
+    font-size: 0.75em;
+}
+
+.links .btn:hover{
+    background-color: rgba(75, 77, 73, 0.596);
+}

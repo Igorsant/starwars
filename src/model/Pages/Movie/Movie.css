@@ -1,0 +1,26 @@
+header{
+    background-color: rgba(102, 95, 95, 0.356);
+    text-align: center;
+    padding: 30px;
+}
+header h1{
+    /* border: 1px solid red; */
+    display: inline-block;
+}
+
+.flexMovie {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+
+
+.card{
+    margin-top: 20px;
+    width: 300px;
+    padding: 10px;
+    text-align: center;
+    background-color: rgba(102, 95, 95, 0.356);
+    border-radius: 10px;
+}
