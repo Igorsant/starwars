@@ -10,6 +10,7 @@ const Controller = () => {
                 <Route path="/" element={<Home />} />
                 <Route path="/movies/:id" element={<Movie />} />
             </Routes>
+            <footer><p>All rights reserved - made by Igor Oliveira dos Santos &copy;</p></footer>
         </Router>
     )
 }

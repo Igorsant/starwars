@@ -9,3 +9,16 @@ body{
     padding: 0;
     margin: 0;
 }
+
+footer{
+    background-color: rgba(102, 95, 95, 0.356);
+    margin: 20px;
+    border-radius: 10px;
+    padding: 10px;
+    color: blanchedalmond;
+    text-indent: 20px;
+}
+
+footer p{
+    font-size: 0.7em;
+}

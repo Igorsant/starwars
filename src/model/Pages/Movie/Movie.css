@@ -14,13 +14,20 @@ header h1{
     flex-wrap: wrap;
 }
 
-
-
 .card{
     margin-top: 20px;
     width: 300px;
     padding: 10px;
-    text-align: center;
+    text-align: justify;
     background-color: rgba(102, 95, 95, 0.356);
     border-radius: 10px;
+}
+
+.card h3{
+    text-align: center;
+}
+
+.card p{
+    margin-top: 15px;
+    font-size: 0.7em;
 }

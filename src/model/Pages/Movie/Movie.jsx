@@ -3,22 +3,21 @@ import { useParams } from 'react-router-dom'
 import './Movie.css'
 import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
-
-// const Grid = style.div`
-//     padding: 2px
-// `
+import Card from '../../components/Card'
+import CharactersCard from '../../components/CharactersCard'
 
 const Movie = () => {
     const { id } = useParams()
     const [data, setData] = useState(null)
+    const episodes = ['I', 'II', 'III', 'IV', 'V', 'VI']
 
     useEffect(
         () => {
-            setData({})
-            console.log('redered')
             fetch(`https://swapi.dev/api/films/${id}`)
                 .then(data => data.json())
-                .then(res => setData(res))
+                .then(res => {
+                    setData(res)
+                })
         },
         [setData]
     )
@@ -26,29 +25,22 @@ const Movie = () => {
         <SkeletonTheme baseColor='rgba(102, 95, 95, 0.356)' highlightColor='#FFF'>
             <div style={{color: 'yellow'}}>
                 <header>
-                    {data ? <h1>{data.title}</h1> : <Skeleton />}
+                    {data ? <h1>{`Star Wars ${episodes[data.episode_id-1]}: ${data.title}`}</h1> : <Skeleton />}
                 </header>
                 <div className='flexMovie'>
                     <div className='.flexItemMovie'>
-                        <div className='card'>
-                            <h3>Characters</h3>
-                        </div>
+                        {/* <Card title="Characters" url={}></Card> */}
+                        <Card title="Characters"></Card>
 
-                        <div className='card'>
-                            <h3>Characters</h3>
-                        </div>
+                        <CharactersCard urls={data && data.characters}></CharactersCard>
                     </div>
                     
                     <div className='.flexItemMovie'>
-                        <div className='card'>
-                            <h3>Planets</h3>
-                        </div>
+                        <Card title="Planets"></Card>
                     </div>
 
                     <div className='.flexItemMovie'>
-                        <div className='card'>
-                            <h3>Species</h3>
-                        </div>
+                        <Card title="Species"></Card>
                     </div>
                 </div>
             </div>
