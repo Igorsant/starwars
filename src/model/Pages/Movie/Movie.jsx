@@ -5,6 +5,8 @@ import Skeleton, { SkeletonTheme } from 'react-loading-skeleton'
 import 'react-loading-skeleton/dist/skeleton.css'
 import Card from '../../components/Card'
 import CharactersCard from '../../components/CharactersCard'
+import PlanetsCard from '../../components/PlanetsCard'
+import SpeciesCard from '../../components/SpeciesCard'
 
 const Movie = () => {
     const { id } = useParams()
@@ -37,10 +39,12 @@ const Movie = () => {
                     
                     <div className='.flexItemMovie'>
                         <Card title="Planets"></Card>
+                        {data && data.planets.map(planet => <PlanetsCard url={planet}></PlanetsCard>)}
                     </div>
 
                     <div className='.flexItemMovie'>
                         <Card title="Species"></Card>
+                        {data && data.species.map(planet => <SpeciesCard url={planet}></SpeciesCard>)}
                     </div>
                 </div>
             </div>

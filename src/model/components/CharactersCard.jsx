@@ -21,9 +21,10 @@ const CharactersCard = (props) => {
             {names.map(name => 
                 <p style={{color: 'cyan', textIndent: '20px'}}>{name}</p>
             )}
-            {/* <p>teste</p> */}
         </div>
     )
 }
+
+// TODO transform to links
 
 export default CharactersCard;

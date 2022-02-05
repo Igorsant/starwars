@@ -16,6 +16,7 @@ const Card = (props) => {
     return (
         <div className='card'>
             {props.url ? <h3 style={{color:"cyan"}}>{data && data.name}</h3> : <h3>{props.title}</h3>}
+            
         </div>
     )
 }
