@@ -39,12 +39,12 @@ const Movie = () => {
                     
                     <div className='.flexItemMovie'>
                         <Card title="Planets"></Card>
-                        {data && data.planets.map(planet => <PlanetsCard url={planet}></PlanetsCard>)}
+                        {data && data.planets.map(planet => <PlanetsCard key={planet} url={planet}></PlanetsCard>)}
                     </div>
 
                     <div className='.flexItemMovie'>
                         <Card title="Species"></Card>
-                        {data && data.species.map(planet => <SpeciesCard url={planet}></SpeciesCard>)}
+                        {data && data.species.map(specie => <SpeciesCard key={specie} url={specie}></SpeciesCard>)}
                     </div>
                 </div>
             </div>

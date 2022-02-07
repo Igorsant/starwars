@@ -1,14 +1,21 @@
 import React, { useEffect, useState } from 'react'
+import { Link } from 'react-router-dom'
 
 const CharactersCard = (props) => {
     const [names, setNames] = useState([])
     
+    const getIdFromUrl = (url) => {
+        const splittedUrl = url.split('/')
+        return splittedUrl[splittedUrl.length-2]
+    }
     useEffect(() => {
-        console.log(names)
         if(props.urls && names.length == 0){
             for(let url of props.urls){
                 fetch(url).then(data => data.json()).then(res => {
-                    setNames(curr => [...curr, res.name])
+                    setNames(curr => [...curr, {
+                        id: getIdFromUrl(url),
+                        name: res.name
+                    }])
                     console.log('opa')
                 })
             }
@@ -19,12 +26,10 @@ const CharactersCard = (props) => {
     return (
         <div className='card'>
             {names.map(name => 
-                <p style={{color: 'cyan', textIndent: '20px'}}>{name}</p>
+                <Link key={`character => ${name.id}`} to={`/characters/${name.id}`} style={{color: 'cyan', textIndent: '20px'}}>{name.name}</Link>
             )}
         </div>
     )
 }
-
-// TODO transform to links
 
 export default CharactersCard;

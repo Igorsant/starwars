@@ -15,6 +15,10 @@ const SpeciesCard = (props) => {
     })
 
     useEffect(() => {
+        const init = {
+            method: 'GET',
+            mode: 'no-cors'
+        }
         props.url &&
             fetch(props.url)
             .then(data => data.json())
@@ -27,7 +31,7 @@ const SpeciesCard = (props) => {
         <div className='card'>
             <h3>{data.name}</h3>
             <p>Classification: {data.classification}</p>
-            <p>Designatio: {data.designation}</p>
+            <p>Designation: {data.designation}</p>
             <p>Average Height: {data.average_height}</p>
             <p>Skin Colors: {data.skin_colors}</p>
             <p>Hair Colors: {data.hair_colors}</p>

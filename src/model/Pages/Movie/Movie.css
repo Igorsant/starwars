@@ -1,7 +1,8 @@
 header{
-    background-color: rgba(102, 95, 95, 0.356);
+    background-color: rgba(0, 0, 0, 0.616);
     text-align: center;
     padding: 30px;
+    /* position: fixed; */
 }
 header h1{
     /* border: 1px solid red; */
@@ -21,10 +22,22 @@ header h1{
     text-align: justify;
     background-color: rgba(102, 95, 95, 0.356);
     border-radius: 10px;
+    
 }
 
 .card h3{
     text-align: center;
+}
+
+.card a{
+    display: block;
+    text-decoration: none;
+    margin-top: 15px;
+    font-size: 0.7em;
+}
+
+.card a:hover{
+    text-decoration: underline;
 }
 
 .card p{
