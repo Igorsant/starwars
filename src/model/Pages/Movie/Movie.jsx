@@ -7,6 +7,7 @@ import Card from '../../components/Card'
 import CharactersCard from '../../components/CharactersCard'
 import PlanetsCard from '../../components/PlanetsCard'
 import SpeciesCard from '../../components/SpeciesCard'
+import MainTemplate from '../../../common/MainTemplate'
 
 const Movie = () => {
     const { id } = useParams()
@@ -25,10 +26,7 @@ const Movie = () => {
     )
     return (
         <SkeletonTheme baseColor='rgba(102, 95, 95, 0.356)' highlightColor='#FFF'>
-            <div style={{color: 'yellow'}}>
-                <header>
-                    {data ? <h1>{`Star Wars ${episodes[data.episode_id-1]}: ${data.title}`}</h1> : <Skeleton />}
-                </header>
+            <MainTemplate title={data && data.title}>
                 <div className='flexMovie'>
                     <div className='.flexItemMovie'>
                         {/* <Card title="Characters" url={}></Card> */}
@@ -47,7 +45,8 @@ const Movie = () => {
                         {data && data.species.map(specie => <SpeciesCard key={specie} url={specie}></SpeciesCard>)}
                     </div>
                 </div>
-            </div>
+            </MainTemplate>
+                
         </SkeletonTheme>
     )
 }

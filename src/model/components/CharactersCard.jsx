@@ -16,7 +16,6 @@ const CharactersCard = (props) => {
                         id: getIdFromUrl(url),
                         name: res.name
                     }])
-                    console.log('opa')
                 })
             }
         }
