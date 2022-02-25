@@ -8,6 +8,11 @@ const ArrowButton = styled.button`
     background: none;
     font-size: 1em;
     color: yellow;
+    cursor: pointer;
+    width: 20%;
+    &:hover{
+        border: 1px solid yellow;
+    }
 `
 
 const Card = ({collapsible, onClick,...props}) => {
