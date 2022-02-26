@@ -16,6 +16,7 @@ const Collapse = styled.div`
         height: ${props.height};
         overflow: hidden;
     `};
+    transition: height 1s;
 `
 
 const Movie = () => {
@@ -43,7 +44,7 @@ const Movie = () => {
         <SkeletonTheme baseColor='rgba(102, 95, 95, 0.356)' highlightColor='#FFF'>
             <MainTemplate title={data && data.title}>
                 <div className='flexMovie'>
-                    <div className='.flexItemMovie'>
+                    <div className='flexItemMovie'>
                         {/* <Card title="Characters" url={}></Card> */}
                         <Card collapsible onClick={handleCharactersClick} title="Characters" show={showCharacters}></Card>
                         <Collapse height={showCharacters ? '100%' : '0'}>
@@ -51,7 +52,7 @@ const Movie = () => {
                         </Collapse>
                     </div>
                     
-                    <div className='.flexItemMovie'>
+                    <div className='flexItemMovie'>
                         <Card collapsible onClick={handlePlanetsClick} title="Planets" show={showPlanets}></Card>
                         <Collapse height={showPlanets ? '100%' : '0'}>
                             {data && data.planets.map(planet => <PlanetsCard key={planet} url={planet}></PlanetsCard>)}
@@ -59,7 +60,7 @@ const Movie = () => {
                         
                     </div>
 
-                    <div className='.flexItemMovie'>
+                    <div className='flexItemMovie'>
                         <Card collapsible onClick={handleSpeciesClick} show={showSpecies} title="Species"></Card>
                         <Collapse height={showSpecies ? '100%' : '0'}>
                             {data && data.species.map(specie => <SpeciesCard key={specie} url={specie}></SpeciesCard>)}
