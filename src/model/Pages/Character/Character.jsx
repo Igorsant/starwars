@@ -16,12 +16,10 @@ const Character = (props) => {
     const stats = ['name', 'height', 'mass', 'hair_color', 'skin_color', 'eye_color', 'birth_year', 'gender']
     useEffect(
         () => {
-            console.log('got here!')
             fetch(`https://swapi.dev/api/people/${id}`)
                 .then(data => data.json())
                 .then(res => {
                     setData(res)
-                    console.log(data[stats[0]])
                 })
         },
         [setData]

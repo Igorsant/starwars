@@ -3,21 +3,19 @@ import { Link } from 'react-router-dom'
 
 const CharactersCard = (props) => {
     const [names, setNames] = useState([])
-    
     const getIdFromUrl = (url) => {
         const splittedUrl = url.split('/')
         return splittedUrl[splittedUrl.length-2]
     }
     useEffect(() => {
         if(props.urls && names.length == 0){
+            const currentNames = [];
             for(let url of props.urls){
                 fetch(url).then(data => data.json()).then(res => {
-                    setNames(curr => [...curr, {
-                        id: getIdFromUrl(url),
-                        name: res.name
-                    }])
+                    currentNames.push({ id: getIdFromUrl(url), name: res.name });
                 })
             }
+            setNames(currentNames)
         }
         
     }, [props.urls])

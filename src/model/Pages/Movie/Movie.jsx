@@ -36,7 +36,6 @@ const Movie = () => {
         },
         [id]
     )
-
     const handleCharactersClick = () => setShowCharacters(curr => !curr)
     const handlePlanetsClick = () => setShowPlanets(curr => !curr)
     const handleSpeciesClick = () => setShowSpecies(curr => !curr)
